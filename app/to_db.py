@@ -8,7 +8,7 @@ import time as tm
 WAIT_CURRENT_CPU = 5
 WAIT_AVERAGE_CPU = 60
 
-conn = sqlite3.connect('pythonDB4.db')
+conn = sqlite3.connect('pythonDB.db')
 c = conn.cursor()
 
 
@@ -21,7 +21,7 @@ def round_to_secs(dt: datetime):
 def create_table():
     """Создает необходимые таблицы в базе данных"""
     c.execute(
-        'CREATE TABLE IF NOT EXISTS CurrentCpu (timecpu INTEGER, valuecpu REAL)')
+        'CREATE TABLE IF NOT EXISTS CurrentCpu (timecpu TEXT, valuecpu REAL)')
     c.execute(
         'CREATE TABLE IF NOT EXISTS AverageCpu (timeavg INTEGER, valueavg REAL)')
 
